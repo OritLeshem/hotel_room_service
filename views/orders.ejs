@@ -9,55 +9,73 @@
 </head>
 <body>
     <form id="new-form" action="/orders" method="POST">
-       
+       <h2>click your main dish:</h2>
       <div>
         <input type="radio" id="chichen" name="main_dish" value="chichen"
                checked>
         <label  for="chichen"><img id="picture" src="/images/chicken.jpg"></label>
       </div>
+      chichen
+      <br>
+
       <div>
-        <input type="radio" id="chichen" name="main_dish" value="chichen"
+        <input type="radio" id="steak" name="main_dish" value="steak"
                checked>
-        <label  for="chichen"><img id="picture" src="/images/steak.jpg"></label>
+        <label  for="steak"><img id="picture" src="/images/steak.jpg"></label>
       </div>
-       
-      
-        <label>side</label>
-        <select name="side_dish">
-          <option value="potato">potato</option>
-          <option value="rice">rice</option>
-        </select>
-      
-        <label>dessert</label>
-        <select name="dessert_dish">
-          <option value="chocolate">chocolate</option>
-          <option value="cheese">richeesece</option>
-        </select>
-      
+      steak
+      <br>
+      <br>
+      <br>
+
+ <h2>click your side dish:</h2>
+       <div>
+        <input type="radio" id="potato" name="side_dish" value="potato"
+               checked>
+        <label  for="potato"><img id="picture" src="/images/potato.jpg"></label>
+      </div>
+      potato
+      <br>
+
+      <div>
+        <input type="radio" id="rice" name="side_dish" value="rice"
+               checked>
+        <label  for="rice"><img id="picture" src="/images/rice.jpg"></label>
+      </div>
+      rice
+      <br>
+      <br>
+      <br>
+
+      <h2>click your dessert:</h2>
+      <div>
+       <input type="radio" id="chocolate" name="dessert_dish" value="chocolate"
+              checked>
+       <label  for="chocolate"><img id="picture" src="/images/chocolate.jpg"></label>
+     </div>
+     chocolate
+     <br>
+
+     <div>
+       <input type="radio" id="pancake" name="dessert_dish" value="pancake"
+              checked>
+       <label  for="pancake"><img id="picture" src="/images/pancake.jpg"></label>
+     </div>
+     pancake
+     <br>
+     <br>
+     <br>
+
+     
         <label>alergies</label>
         <input type="checkbox" name="allergies" checked>
+        <br>
+        <br>
         <input type="submit" value="order">
       </form>
 
 
-<script>
-async function handle_order() {
-   // Ensure there's a name entered
-   if (inputEls[0].value) {
-     let newPup = await fetch(BASE_URL, {
-       method: 'POST',
-       headers: {'Content-Type': 'application/json'},
-       body: JSON.stringify({
-         name: inputEls[0].value,
-         breed: inputEls[1].value,
-         age: inputEls[2].value
-       })
-     }).then(res => res.json());
-     alert(`Pup added has an id of ${newPup._id}`);
-     // Clear the inputs
-     inputEls[0].value = inputEls[1].value = inputEls[2].value = '';
-   }
- }
+
 
 </script>
 
