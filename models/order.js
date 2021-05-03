@@ -7,11 +7,12 @@ const roomSchema= new Schema({
   num_of_people: Number
 })
 const orderSchema = new Schema({
-  room:[roomSchema],
+  rooms:[roomSchema],
   main_dish: String,
   side_dish: String,
   dessert_dish:String,
-  allergies:String
+  allergies:String,
+  roomNum:Number,
 });
 
 

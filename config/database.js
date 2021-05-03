@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/orders', {
+mongoose.connect('mongodb://localhost/reservation', {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true

@@ -29,8 +29,11 @@ function all_info(req, res) {
 }
 function confirm(req, res) {
     Order.findById((req.params.id),function(err, order) {
-         console.log(order);
+    //   order.room.findOne({room_num:`${order.roomNum}`}, function (err, r_num) {});
+         console.log(order.room[0]);
          res.render('confirm', {order})
     });
 }
+
+
      
