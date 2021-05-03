@@ -31,7 +31,30 @@
         <input type="checkbox" name="allergies" checked>
         <input type="submit" value="order">
       </form>
-     
+
+
+<script>
+async function handle_order() {
+   // Ensure there's a name entered
+   if (inputEls[0].value) {
+     let newPup = await fetch(BASE_URL, {
+       method: 'POST',
+       headers: {'Content-Type': 'application/json'},
+       body: JSON.stringify({
+         name: inputEls[0].value,
+         breed: inputEls[1].value,
+         age: inputEls[2].value
+       })
+     }).then(res => res.json());
+     alert(`Pup added has an id of ${newPup._id}`);
+     // Clear the inputs
+     inputEls[0].value = inputEls[1].value = inputEls[2].value = '';
+   }
+ }
+
+</script>
+
+
 
 </body>
 </html>
