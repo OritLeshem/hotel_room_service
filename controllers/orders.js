@@ -63,7 +63,7 @@ function dessert_dish(req,res){
 }
 
 function add_dessert_dish(req, res){
-    Order.findOneAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish},function(err,order){
+    Order.findOneAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish,allergies:req.body.allergies },function(err,order){
         res.redirect(`/orders/${order._id}/confirm`)        
         // res.redirect(`/orders/${order._id}/dessert_dish`)
 
