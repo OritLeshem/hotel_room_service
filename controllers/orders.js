@@ -1,4 +1,5 @@
 const Order = require('../models/order');
+const Room = require('../models/room');
 
 module.exports={
     create_order,
@@ -23,16 +24,21 @@ function create_order(req,res){
 
 function all_info(req, res) {
     Order.find({},function(err, orders){
+    Room.find({}, function (err, r_num) {
+        console.log(r_num);
         console.log(orders);
-        res.render('all_info',{orders});
+        res.render('all_info',{orders,r_num});
+        });
     });
 }
 function confirm(req, res) {
     Order.findById((req.params.id),function(err, order) {
-    //   order.room.findOne({room_num:`${order.roomNum}`}, function (err, r_num) {});
-         console.log(order.room[0]);
-         res.render('confirm', {order})
+    Room.find({room_num:order.roomNum}, function (err, r_num) {
+        console.log(r_num);
+        res.render('confirm', {order,r_num})
+   });
     });
+         
 }
 
 

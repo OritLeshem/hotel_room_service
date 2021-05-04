@@ -14,6 +14,9 @@
             <th>main_dish</th>
             <th>side_dish</th>
             <th>dessert_dish</th>
+            <th>room number</th>
+            <th>number of people</th>
+
 
           </tr>
         </thead>
@@ -23,9 +26,11 @@
               <td><%= d.main_dish %></td>
               <td><%= d.side_dish %></td>
               <td><%= d.dessert_dish %></td>
+
               
             </tr>
             <% }); %>
+            <td><%=r_num[0].roomNum %></td>
           </tbody>
         </table>
 </body>
