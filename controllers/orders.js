@@ -35,9 +35,10 @@ function side_dish(req,res){
 function add_side_dish(req, res){
   Order.findOneAndUpdate(req.params.id,{side_dish:req.body.side_dish},function(err,order){
     
-    res.redirect(`/orders/${order._id}`)
+    res.redirect(`/orders/${order._id}/dessert_dish`)
   })
 }
+
 function dessert_dish(req,res){
     Order.findById((req.params.id),function(err, order) {
         res.render('orders/dessert_dish',{order});
@@ -46,9 +47,13 @@ function dessert_dish(req,res){
 
 function add_dessert_dish(req, res){
     Order.findOneAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish},function(err,order){
-        res.redirect(`/orders/${order._id}/dessert_dish`)
-    })
+        res.redirect(`/orders/${order._id}/confirm`)        
+        // res.redirect(`/orders/${order._id}/dessert_dish`)
+
+        
+       });
   }
+    
 
 function all_info(req, res) {
     Order.find({},function(err, orders){
