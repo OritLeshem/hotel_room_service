@@ -10,7 +10,7 @@ module.exports={
 
 function start_menu(req,res){
     console.log("start menu");
-    res.render("orders");
+    res.render("orders/main_dish");
 }
 
 function create_order(req,res){
