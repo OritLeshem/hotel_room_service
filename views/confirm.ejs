@@ -9,6 +9,17 @@
 <body>
     <h1>confirm</h1>
     <section id="show-page">
+        <div>Room: </div>
+        <div><%= r_num[0].room_num %></div>
+
+        <div>name: </div>
+        <div><%= r_num[0].full_name %></div>
+
+        <div>amount of people: </div>
+        <div><%= r_num[0].num_of_people %></div>
+        <br>
+        <br>
+        <br>
         <div>Main: </div>
         <div><%= order.main_dish %></div>
         <br>
@@ -18,8 +29,13 @@
         <div>Dessert: </div>
         <div><%= order.dessert_dish %></div>
         <br>
+        <div>allergies/ comments for the chef: </div>
+        <div><%= order.allergies %></div>
+        <br>
     </section>
-        <div>Room: </div>
-        <div><%= r_num[0].room_num %></div>
+        
+
+
+        <button><a href="/orders/<%=order._id%>/edit_order">change your order</a></button>
 </body>
 </html>

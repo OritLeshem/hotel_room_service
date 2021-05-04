@@ -7,9 +7,12 @@ router.get('/', orderCrtl.start_menu)
 router.post('/',orderCrtl.create_order)
 router.post('/side_dish',orderCrtl.add_side_dish)
 router.post('/dessert_dish',orderCrtl.add_dessert_dish)
-router.get('/all_info',orderCrtl.all_info)
+router.post('/edit_main_dish',orderCrtl.edit_main_dish)
 
+router.get('/all_info',orderCrtl.all_info)
 router.get('/:id',orderCrtl.side_dish)
 router.get('/:id/dessert_dish',orderCrtl.dessert_dish)
 router.get('/:id/confirm',orderCrtl.confirm)
+router.get('/:id/edit_order',orderCrtl.edit_order)
+
 module.exports = router;

@@ -9,7 +9,9 @@ module.exports={
     dessert_dish,
     add_dessert_dish,
     all_info,
-    confirm
+    confirm,
+    edit_order,
+    edit_main_dish,
     };
 
 function start_menu(req,res){
@@ -25,6 +27,21 @@ function create_order(req,res){
     })
    
 }
+function edit_order(req,res){
+    Order.findById((req.params.id),function(err, order) {
+        res.render('orders/edit_order',{order});
+    })
+}
+
+
+function edit_main_dish(req, res){
+    Order.findOneAndUpdate(req.params.id,{main_dish:req.body.main_dish},function(err,order){
+      
+      res.redirect(`/orders/${order._id}`)
+    })
+  }
+
+
 
 function side_dish(req,res){
     Order.findById((req.params.id),function(err, order) {
@@ -78,6 +95,7 @@ function confirm(req, res) {
     });
          
 }
+
 
 
      
