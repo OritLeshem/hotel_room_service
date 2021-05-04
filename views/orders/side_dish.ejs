@@ -8,27 +8,8 @@
     <title>menu</title>
 </head>
 <body>
-    <form id="new-form" action="/orders" method="POST">
-      <h2>click your room number:</h2>
-      <input type = "number" name=roomNum>
-       <h2>click your main dish:</h2>
-      <div>
-        <input type="radio" id="chichen" name="main_dish" value="chichen"
-               checked>
-        <label  for="chichen"><img id="picture" src="/images/chicken.jpg"></label>
-      </div>
-      chichen
-      <br>
-
-      <div>
-        <input type="radio" id="steak" name="main_dish" value="steak"
-               checked>
-        <label  for="steak"><img id="picture" src="/images/steak.jpg"></label>
-      </div>
-      steak
-      <br>
-      <br>
-      <br>
+    <form id="new-form" action="/orders/dessert_dish" method="POST">
+      
 
  <h2>click your side dish:</h2>
        <div>
@@ -49,30 +30,7 @@
       <br>
       <br>
 
-      <h2>click your dessert:</h2>
-      <div>
-       <input type="radio" id="chocolate" name="dessert_dish" value="chocolate"
-              checked>
-       <label  for="chocolate"><img id="picture" src="/images/chocolate.jpg"></label>
-     </div>
-     chocolate
-     <br>
-
-     <div>
-       <input type="radio" id="pancake" name="dessert_dish" value="pancake"
-              checked>
-       <label  for="pancake"><img id="picture" src="/images/pancake.jpg"></label>
-     </div>
-     pancake
-     <br>
-     <br>
-     <br>
-
      
-        <label>alergies</label>
-        <input type="checkbox" name="allergies" checked>
-        <br>
-        <br>
         <input type="submit" value="order">
       </form>
 

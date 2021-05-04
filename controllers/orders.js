@@ -4,6 +4,10 @@ const Room = require('../models/room');
 module.exports={
     create_order,
     start_menu,
+    side_dish,
+    add_side_dish,
+    dessert_dish,
+    add_dessert_dish,
     all_info,
     confirm
     };
@@ -16,11 +20,35 @@ function start_menu(req,res){
 function create_order(req,res){
     const order = new Order(req.body);
     order.save(function(err){
-        if(err) return res.redirect('/orders');
+        if(err) return res.send(err);
         res.redirect(`/orders/${order._id}`)
     })
-    // console.log(order);
+   
 }
+
+function side_dish(req,res){
+    Order.findById((req.params.id),function(err, order) {
+        res.render('orders/side_dish',{order});
+    })
+}
+
+function add_side_dish(req, res){
+  Order.findOneAndUpdate(req.params.id,{side_dish:req.body.side_dish},function(err,order){
+    
+    res.redirect(`/orders/${order._id}`)
+  })
+}
+function dessert_dish(req,res){
+    Order.findById((req.params.id),function(err, order) {
+        res.render('orders/dessert_dish',{order});
+    })
+}
+
+function add_dessert_dish(req, res){
+    Order.findOneAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish},function(err,order){
+        res.redirect(`/orders/${order._id}/dessert_dish`)
+    })
+  }
 
 function all_info(req, res) {
     Order.find({},function(err, orders){
