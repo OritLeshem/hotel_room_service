@@ -12,6 +12,8 @@ module.exports={
     confirm,
     edit_order,
     edit_main_dish,
+    delete_one_info,
+    delete_all_info
     };
 
 function start_menu(req,res){
@@ -96,6 +98,20 @@ function confirm(req, res) {
          
 }
 
+function delete_one_info(req,res){
+    console.log("delete function wae reached",req.params.id)
+    Order.deleteOne({_id:req.params.id},function(err, order){
+        res.redirect('/orders/all_info')
+    });
+    
+    
 
+}
+
+function delete_all_info(req,res){
+    Order.deleteMany();
+    res.redirect('/orders/all_info')
+
+}
 
      

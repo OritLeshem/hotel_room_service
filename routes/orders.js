@@ -10,9 +10,10 @@ router.post('/dessert_dish',orderCrtl.add_dessert_dish)
 router.post('/edit_main_dish',orderCrtl.edit_main_dish)
 
 router.get('/all_info',orderCrtl.all_info)
+router.delete('/delete_all_info',orderCrtl.delete_all_info)
 router.get('/:id',orderCrtl.side_dish)
 router.get('/:id/dessert_dish',orderCrtl.dessert_dish)
 router.get('/:id/confirm',orderCrtl.confirm)
 router.get('/:id/edit_order',orderCrtl.edit_order)
-
+router.delete('/all_info/:id',orderCrtl.delete_one_info)
 module.exports = router;

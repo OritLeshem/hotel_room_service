@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>all info</title>
-    <button><a href="/orders/all_info">delete all orders</a></button>
+    
+    <form action="/orders/delete_all_info/?_method=DELETE"
+      class="delete-form" method="POST">
+      <button type="submit">delete all info</button>
+    </form>
 </head>
 <body>
     <h1>all info</h1>
@@ -25,9 +29,16 @@
         <tbody>
           <% orders.forEach(function(d) { %>
             <tr>
+              <form action="/orders/all_info/<%= d.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
               <td><%= d.main_dish %></td>
               <td><%= d.side_dish %></td>
               <td><%= d.dessert_dish %></td>
+              <td><%= d.allergies %></td>
+              
+              
 
               <td><%= r_num[0]._id %></td>
             <td><%= r_num[0].room_num %></td>
@@ -36,7 +47,10 @@
             </tr>
             <% }); %>
             
-            
+            <% orders.forEach(function(s) { %>
+              <li>
+                
+            <% }); %>
           </tbody>
         </table>
 </body>
