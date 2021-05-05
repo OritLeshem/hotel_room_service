@@ -14,54 +14,50 @@
 </head>
 <body>
     <h1>all info</h1>
+   <% if (orders) { %>
     <table id="list">
-        <thead>
+      <thead>
+        <tr>
+          <th># room</th>
+          <th>number of<br> people</th>
+
+          <th>main_dish</th>
+          <th>side_dish</th>
+          <th>dessert_dish</th>
+          <th>allergies</th>
+          <th>delete</th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(function(d) { %>
           <tr>
-            <th># room</th>
-            <th>number of<br> people</th>
-
-            <th>main_dish</th>
-            <th>side_dish</th>
-            <th>dessert_dish</th>
-            <th>allergies</th>
             
-            <!-- <th>room id</th> -->
+             
             
-            <th>name</th>
-            
-
+            <td><%= d.room_data[0].room_num %></td>
+            <td><%= d.room_data[0].full_name %></td>
+            <td><%= d.main_dish %></td>
+            <td><%= d.side_dish %></td>
+            <td><%= d.dessert_dish %></td>
+            <td><%= d.allergies %></td>
+            <td><form action="/orders/all_info/<%= d.id %>?_method=DELETE"
+              class="delete-form" method="POST">
+            <button type="submit">X</button>
+            </form>
+            </td>
+          
           </tr>
-        </thead>
-        <tbody>
-          <% orders.forEach(function(d) { %>
-            <tr>
-              <form action="/orders/all_info/<%= d.id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <td><%= r_num[0].room_num %></td>
-              <td><%= r_num[0].num_of_people %></td>
+          <% }); %>
+          
+        
+        </tbody>
+      </table>
 
-              <td><%= d.main_dish %></td>
-              <td><%= d.side_dish %></td>
-              <td><%= d.dessert_dish %></td>
-              <td><%= d.allergies %></td>
-              
-              <td><%= r_num[0].full_name %></td>
-              
-
-            <!-- <td><%= r_num[0]._id %></td> -->
-           
-            
-            
-            </tr>
-            <% }); %>
-            
-            <% orders.forEach(function(s) { %>
-              <li>
-                
-            <% }); %>
-          </tbody>
-        </table>
+   <% } else { %>
+    <h1>there are not orders yet</h1>
+   <% } %>
+    
 </body>
 </html>

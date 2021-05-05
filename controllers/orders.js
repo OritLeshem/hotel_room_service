@@ -32,7 +32,7 @@ function create_order(req,res){
 }
 function edit_order(req,res){
     Order.findById((req.params.id),function(err, order) {
-        res.render('orders/:id/edit_order',{order});
+        res.render('orders/edit_order',{order});
     })
 }
 
@@ -40,7 +40,7 @@ function edit_order(req,res){
 function edit_main_dish(req, res){
     Order.findByIdAndUpdate(req.params.id,{main_dish:req.body.main_dish},function(err,order){
       
-      res.redirect(`/orders/${order._id}`)
+        res.redirect(`/orders/${order._id}`)
     })
   }
 
@@ -76,21 +76,37 @@ function add_dessert_dish(req, res){
         console.log("add_dessert_dish parms---->",req.params)
         res.redirect(`/orders/${order._id}/confirm`)        
         // res.redirect(`/orders/${order._id}/dessert_dish`)
-
-        
-       });
-  }
-    
-
-function all_info(req, res) {
-    Order.find({},function(err, orders){
-    Room.find({}, function (err, r_num) {
-        // console.log("r_num___>",r_num);
-        // console.log("orders--->",orders);
-        res.render('all_info',{orders,r_num});
-        });
     });
 }
+
+  
+
+function all_info(req, res) {
+    Order.find({}).
+    
+    populate('room_data').
+    exec(function (err,orders){
+        if (err) return handleError(err);
+       
+        res.render('all_info',{orders}); 
+          });
+        
+        
+    
+}
+
+
+// function all_info(req, res) {
+//     Order.find({},function(err, orders){
+//     Room.find({}, function (err, r_num) {
+//         // console.log("r_num___>",r_num);
+//         // console.log("orders--->",orders);
+//         res.render('all_info',{orders,r_num});
+//         });
+//     });
+// }
+
+
 function confirm(req, res) {
     Order.findById((req.params.id),function(err, order) {
         //console.log("req.body---->",order.roomNum)
@@ -117,8 +133,11 @@ function delete_one_info(req,res){
 }
 
 function delete_all_info(req,res){
-    Order.deleteMany();
-    res.redirect('/orders/all_info')
+    Order.deleteMany(function(err, order){
+        res.redirect('/orders/all_info')
+
+    });
+    
 
 }
 

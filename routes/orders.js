@@ -7,7 +7,7 @@ router.get('/', orderCrtl.start_menu)
 router.post('/',orderCrtl.create_order)
 router.post('/:id/side_dish',orderCrtl.add_side_dish)
 router.post('/:id/dessert_dish',orderCrtl.add_dessert_dish)
-router.post('/edit_main_dish',orderCrtl.edit_main_dish)
+router.post('/:id/edit_main_dish',orderCrtl.edit_main_dish)
 
 router.get('/all_info',orderCrtl.all_info)
 router.delete('/delete_all_info',orderCrtl.delete_all_info)
