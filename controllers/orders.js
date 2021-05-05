@@ -24,6 +24,7 @@ function start_menu(req,res){
 function create_order(req,res){
     const order = new Order(req.body);
     order.save(function(err){
+        console.log("create_order parms---->",req.params)
         if(err) return res.send(err);
         res.redirect(`/orders/${order._id}`)
     })
@@ -31,13 +32,13 @@ function create_order(req,res){
 }
 function edit_order(req,res){
     Order.findById((req.params.id),function(err, order) {
-        res.render('orders/edit_order',{order});
+        res.render('orders/:id/edit_order',{order});
     })
 }
 
 
 function edit_main_dish(req, res){
-    Order.findOneAndUpdate(req.params.id,{main_dish:req.body.main_dish},function(err,order){
+    Order.findByIdAndUpdate(req.params.id,{main_dish:req.body.main_dish},function(err,order){
       
       res.redirect(`/orders/${order._id}`)
     })
@@ -46,26 +47,33 @@ function edit_main_dish(req, res){
 
 
 function side_dish(req,res){
+   
     Order.findById((req.params.id),function(err, order) {
+        console.log("side_dish parms---->",req.params)
         res.render('orders/side_dish',{order});
     })
 }
 
 function add_side_dish(req, res){
-  Order.findOneAndUpdate(req.params.id,{side_dish:req.body.side_dish},function(err,order){
-    
+    console.log("add_side_dish parms before---->",req.params)
+  Order.findByIdAndUpdate(req.params.id,{side_dish:req.body.side_dish},function(err,order){
+    console.log("add_side_dish parms after---->",req.params)
     res.redirect(`/orders/${order._id}/dessert_dish`)
+    console.log("add_side_dish end order._id---->",order._id)
   })
 }
 
 function dessert_dish(req,res){
+    console.log("dessert_dish parms---->",req.params)
     Order.findById((req.params.id),function(err, order) {
         res.render('orders/dessert_dish',{order});
     })
 }
 
 function add_dessert_dish(req, res){
-    Order.findOneAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish,allergies:req.body.allergies },function(err,order){
+    console.log("dessert_dish parms---->",req.params)
+    Order.findByIdAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish,allergies:req.body.allergies },function(err,order){
+        console.log("add_dessert_dish parms---->",req.params)
         res.redirect(`/orders/${order._id}/confirm`)        
         // res.redirect(`/orders/${order._id}/dessert_dish`)
 
@@ -88,7 +96,7 @@ function confirm(req, res) {
         //console.log("req.body---->",order.roomNum)
 
     Room.find({room_num:order.roomNum}, function (err, r_num) {
-        console.log("r_num[0]._id---->",r_num[0]._id)
+        // console.log("r_num[0]._id---->",r_num[0]._id)
     order.room_data.push(r_num[0]._id);
     order.save()
         // console.log(r_num);

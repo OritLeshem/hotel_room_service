@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>all info</title>
     
     <form action="/orders/delete_all_info/?_method=DELETE"
@@ -16,13 +17,18 @@
     <table id="list">
         <thead>
           <tr>
+            <th># room</th>
+            <th>number of<br> people</th>
+
             <th>main_dish</th>
             <th>side_dish</th>
             <th>dessert_dish</th>
-            <th>room id</th>
-            <th>room number</th>
+            <th>allergies</th>
+            
+            <!-- <th>room id</th> -->
+            
             <th>name</th>
-            <th>number of people</th>
+            
 
           </tr>
         </thead>
@@ -33,17 +39,21 @@
                 class="delete-form" method="POST">
                 <button type="submit">X</button>
               </form>
+              <td><%= r_num[0].room_num %></td>
+              <td><%= r_num[0].num_of_people %></td>
+
               <td><%= d.main_dish %></td>
               <td><%= d.side_dish %></td>
               <td><%= d.dessert_dish %></td>
               <td><%= d.allergies %></td>
               
+              <td><%= r_num[0].full_name %></td>
               
 
-              <td><%= r_num[0]._id %></td>
-            <td><%= r_num[0].room_num %></td>
-            <td><%= r_num[0].full_name %></td>
-            <td><%= r_num[0].num_of_people %></td>
+            <!-- <td><%= r_num[0]._id %></td> -->
+           
+            
+            
             </tr>
             <% }); %>
             

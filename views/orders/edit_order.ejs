@@ -8,7 +8,7 @@
     <title>menu</title>
 </head>
 <body>
-    <form id="new-form" action="/orders/edit_main_dish" method="POST">
+    <form id="new-form" action="/orders/<%=order._id%>/edit_main_dish" method="POST">
         <h2>click your room number:</h2>
         <input type = "number" name=roomNum>
         <h2>click your main dish:</h2>

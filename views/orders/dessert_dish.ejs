@@ -8,24 +8,24 @@
     <title>menu</title>
 </head>
 <body>
-    <form id="new-form" action="/orders/dessert_dish" method="POST">
-      
+    <form id="new-form" action="/orders/<%=order._id%>/dessert_dish" method="POST">
+      "/orders/<%=order._id%>/dessert_dish"
 
         <h2>click your dessert:</h2>
       <div>
        <input type="radio" id="chocolate" name="dessert_dish" value="chocolate"
               checked>
-       <label  for="chocolate"><img id="picture" src="/images/chocolate.jpg"></label>
+       <label  for="chocolate"><img id="picture" src="/images/cake2.jpg"></label>
      </div>
-     chocolate
+     chocolate cake
      <br>
 
      <div>
        <input type="radio" id="pancake" name="dessert_dish" value="pancake"
               checked>
-       <label  for="pancake"><img id="picture" src="/images/pancake.jpg"></label>
+       <label  for="pancake"><img id="picture" src="/images/eclair.jpg"></label>
      </div>
-     pancake
+     eclair
      <br>
      <br>
      <br>
