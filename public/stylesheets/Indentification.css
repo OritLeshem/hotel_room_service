@@ -1,5 +1,32 @@
 .card{
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 15vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
     
+}
+#room_num{
+   
+    align-items: center;
+    display: inline-block;
+}
+#text_room{
+    font-size: 25px;
+    color: cornsilk;
+    height: auto;
+    border:solid 2px cornflowerblue;
+    display: inline-block;
+    padding: 6vh;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+}
+#change_order{
+    height: 10vh;
+    align-self: center;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    width: 70vw;
+    font-size: 3vh;
+    box-shadow: 5px 10px 8px #888888;
+
 }

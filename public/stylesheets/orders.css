@@ -1,5 +1,7 @@
 .card-order{
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
     /* background-color: rgb(250, 248, 246); */
 }
 #input_num{
@@ -7,13 +9,17 @@
     -moz-appearance: textfield;
     width: 65vw;
     text-align: center;
-    font-size: 2vh;
+    font-size: 3vh;
     border-radius: 5px;
+    height: 4vh;
 }
 #next_button{
     width: 70vw;
+    height: 5vh;
     font-size: 2vh;
     box-shadow: 5px 10px 8px #888888;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }    
 
 h2{
@@ -44,5 +50,9 @@ h2{
 
 #allergies{
     margin-bottom: 2vh;
-    width: 65vw;
+    width: 68vw;
+}
+input[type=radio]{
+    transform: scale(1.5);
+    margin-bottom: 5px;
 }
