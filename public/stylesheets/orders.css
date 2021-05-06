@@ -1,0 +1,48 @@
+.card-order{
+    text-align: center;
+    /* background-color: rgb(250, 248, 246); */
+}
+#input_num{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    width: 65vw;
+    text-align: center;
+    font-size: 2vh;
+    border-radius: 5px;
+}
+#next_button{
+    width: 70vw;
+    font-size: 2vh;
+    box-shadow: 5px 10px 8px #888888;
+}    
+
+h2{
+    margin-bottom: 1vh;
+}
+#input_dish{
+    margin-bottom: 4vh;
+    font-size: 3vh;
+}
+
+#input_dish, .checked{
+    font-size: 14px;
+
+}
+
+#picture {
+    text-align: left;
+    margin-right:auto;
+    margin-left: auto;
+    display: block;
+    width: 70vw;
+    height: auto;
+    border-radius: 10px;
+    /* border: 1px solid; */
+    /* padding: 5px; */
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#allergies{
+    margin-bottom: 2vh;
+    width: 65vw;
+}

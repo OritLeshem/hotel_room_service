@@ -18,7 +18,7 @@ MongoDB, mongoose, Node, Express, js, CSS, HTML
 
 Getting Started:
 link:
-Trello:  my trllohttps://trello.com/b/di8TJFN9/planing-user-flow
+Trello:  my trllo https://trello.com/b/di8TJFN9/planing-user-flow
 
 Next Steps:
 Add more dishes, like veggies and drinks.

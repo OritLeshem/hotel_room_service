@@ -10,10 +10,7 @@ a {
   color: #00B7FF;
 }
 
-#picture {
-  width: 350px;
-  height: auto;
-}
+
 
  #list{
   font-family: arial, sans-serif;
@@ -28,3 +25,11 @@ td, th {
   padding: 8px;
 }
 
+#next_button {
+  height: 30px;
+  background-color: aliceblue;
+}
+
+h1{
+  margin-top: 49.76px;
+}

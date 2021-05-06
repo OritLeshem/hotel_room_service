@@ -4,40 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/orders.css' />
     <title>menu</title>
 </head>
 <body>
+  <div class="card-order">
     <form id="new-form" action="/orders" method="POST">
-        <h2>click your room number:</h2>
-        <input type = "number" name=roomNum>
-        <h2>click your main dish:</h2>
-        <div>
-          <input type="radio" id="chichen" name="main_dish" value="chichen"
-                checked>
-          <label  for="chichen"><img id="picture" src="/images/chicken1.jpg"></label>
-        </div>
-        chichen
-        <br>
-
-        <div>
+      
+      <h2>click your room number:</h2>
+      <input id="input_num" type = "number" name=roomNum>
+      
+      <h2>click your main dish:</h2>
+      <div id="input_dish">
+        <input  type="radio" id="name" name="main_dish" value="Chicken"
+          checked>Chicken
+          <label  for="Chicken"><img id="picture" src="/images/chicken1.jpg"></label>
+      </div>
+        
+        <div id="input_dish"> 
           <input type="radio" id="steak" name="main_dish" value="steak"
-                checked>
-          <label  for="steak"><img id="picture" src="/images/steak.jpg"></label>
+                checked> Steak
+          <label  for="steak"><img id="picture" src="/images/meats.jpg"></label>
         </div>
-        steak
-        <br>
-        <br>
-        <br>
+       
 
-
-        <input type="submit" value="order">
+        <input id="next_button" type="submit" value="NEXT">
       </form>
 
 
 
 
-</script>
+  </div>
 
 
 

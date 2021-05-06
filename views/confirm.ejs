@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Confirm</title>
 </head>
 <body>
-    <h1>confirm</h1>
+    <h1>Confirm</h1>
     <section id="show-page">
         <div>Room: </div>
         <div><%= r_num[0].room_num %></div>
@@ -36,6 +36,7 @@
         
 
 
-        <button><a href="/orders/<%=order._id%>/edit_order">change your order</a></button>
+        <button id="change order"><a href="/orders/<%=order._id%>/edit_order">change your order</a></button>
+        <button id="change order"><a href="/orders/<%=order._id%>/edit_order">submit my order</a></button>
 </body>
 </html>

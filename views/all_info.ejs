@@ -18,26 +18,29 @@
     <table id="list">
       <thead>
         <tr>
-          <th># room</th>
-          <th>number of<br> people</th>
+          <th>#Room</th>
+          <th>Name</th>
+          <th>Number of<br> people</th>
 
-          <th>main_dish</th>
-          <th>side_dish</th>
-          <th>dessert_dish</th>
-          <th>allergies</th>
-          <th>delete</th>
+          <th>Main_dish</th>
+          <th>Side_dish</th>
+          <th>Dessert_dish</th>
+          <th>Allergies</th>
+          <th>Delete</th>
           
 
         </tr>
       </thead>
       <tbody>
         <% orders.forEach(function(d) { %>
+
           <tr>
             
-             
+            <% if ( d.room_data[0]!== undefined ) { %>
             
             <td><%= d.room_data[0].room_num %></td>
             <td><%= d.room_data[0].full_name %></td>
+            <td><%= d.room_data[0].num_of_people %></td>
             <td><%= d.main_dish %></td>
             <td><%= d.side_dish %></td>
             <td><%= d.dessert_dish %></td>
@@ -49,6 +52,9 @@
             </td>
           
           </tr>
+          <% } else{ %>
+            <h5></h5>
+           <% } %> 
           <% }); %>
           
         

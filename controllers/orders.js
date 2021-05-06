@@ -113,15 +113,31 @@ function confirm(req, res) {
 
     Room.find({room_num:order.roomNum}, function (err, r_num) {
         // console.log("r_num[0]._id---->",r_num[0]._id)
+    if(r_num[0]!==undefined){    
     order.room_data.push(r_num[0]._id);
     order.save()
         // console.log(r_num);
         res.render('confirm', {order,r_num})
+    }else{
+        res.render("room_err");
+    }
    });
     });
-         
 }
 
+// function confirm(req, res) {
+//     Order.findById((req.params.id),function(err, order) {
+//         //console.log("req.body---->",order.roomNum)
+
+//     Room.find({room_num:order.roomNum}, function (err, r_num) {
+//         // console.log("r_num[0]._id---->",r_num[0]._id)
+//     order.room_data.push(r_num[0]._id);
+//     order.save()
+//         // console.log(r_num);
+//         res.render('confirm', {order,r_num})
+//    });
+//     });
+// }
 function delete_one_info(req,res){
     console.log("delete function wae reached",req.params.id)
     Order.deleteOne({_id:req.params.id},function(err, order){

@@ -4,42 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/orders.css' />
     <title>menu</title>
 </head>
 <body>
+  <div class="card-order">
     <form id="new-form" action="/orders/<%=order._id%>/side_dish" method="POST">
       
-
- <h2>click your side dish:</h2>
-       <div>
-        <input type="radio" id="potato" name="side_dish" value="potato"
-               checked>
-        <label  for="potato"><img id="picture" src="/images/potato.jpg"></label>
-      </div>
-      potato
-      <br>
-
-      <div>
-        <input type="radio" id="rice" name="side_dish" value="rice"
-               checked>
-        <label  for="rice"><img id="picture" src="/images/rice.jpg"></label>
-      </div>
-      rice
-      <br>
-      <br>
-      <br>
-
      
-        <input type="submit" value="order">
+      <h2>click your side dish:</h2>
+      <div id="input_dish">
+        <input  type="radio" id="name" name="side_dish" value="potatoes"
+          checked>Potatoes
+          <label  for="potatoes"><img id="picture" src="/images/potatoes.jpg"></label>
+      </div>
+        
+        <div id="input_dish"> 
+          <input type="radio" id="rice" name="side_dish" value="rice"
+                checked> Rice
+          <label  for="steak"><img id="picture" src="/images/biryani.jpg"></label>
+        </div>
+       
+
+        <input id="next_button" type="submit" value="NEXT">
       </form>
-
-
-
-
-</script>
-
-
-
+  </div>
 </body>
 </html>
