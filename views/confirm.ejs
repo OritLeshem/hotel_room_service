@@ -4,39 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/confirm.css' />
     <title>Confirm</title>
 </head>
 <body>
+    <div id="show-page">
     <h1>Confirm</h1>
-    <section id="show-page">
-        <div>Room: </div>
-        <div><%= r_num[0].room_num %></div>
-
-        <div>name: </div>
-        <div><%= r_num[0].full_name %></div>
-
-        <div>amount of people: </div>
-        <div><%= r_num[0].num_of_people %></div>
-        <br>
-        <br>
-        <br>
-        <div>Main: </div>
-        <div><%= order.main_dish %></div>
-        <br>
-        <div>Side: </div>
-        <div><%= order.side_dish %></div>
-        <br>
-        <div>Dessert: </div>
-        <div><%= order.dessert_dish %></div>
-        <br>
-        <div>allergies/ comments for the chef: </div>
-        <div><%= order.allergies %></div>
-        <br>
-    </section>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>#Room</th>
+            <th><%= r_num[0].room_num %></th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th><%= r_num[0].full_name %></th>
+          </tr>
+          <tr>
+            <th>#people</th>
+            <th><%= r_num[0].num_of_people %></th>
+          </tr> 
+          <tr>
+            <th>Main dish</th>
+            <th><%= order.main_dish %></th>
+          </tr> 
+          <tr>
+            <th>Side dish</th>
+            <th><%= order.side_dish %></th>
+          </tr> 
+          
+          <tr>
+            <th>Dessert</th>
+            <th><%= order.dessert_dish %></th>
+          </tr>   
+          <tr>
+            <th>Allergies/ Comments for the chef</th>
+            <th><%= order.allergies %></th>
+          </tr>                                             
+        </thead>
+    </table>
+  </div>
         
+  
+ 
+           
 
-
-        <button id="change order"><a href="/orders/<%=order._id%>/edit_order">change your order</a></button>
-        <button id="change order"><a href="/orders/<%=order._id%>/edit_order">submit my order</a></button>
+        <button id="change_order"><a href="/orders/<%=order._id%>/edit_order">change your order</a></button>
+        <button id="change_order"><a href="/orders/from_chef">submit my order</a></button>
 </body>
 </html>

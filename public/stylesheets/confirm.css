@@ -1,0 +1,31 @@
+#show-page{
+    text-align: center;
+    align-items: center;
+}
+#list{
+    
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+  }
+  tr{
+      width: 10vw;
+  }
+  th {
+     
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  #change_order{
+      height: 6vh;
+      align-self: center;
+        margin-top: 7vh;
+        margin-left: 10vw;
+        /* margin-bottom: 3vh; */
+        width: 70vw;
+        font-size: 3vh;
+        box-shadow: 5px 10px 8px #888888;
+  
+  }

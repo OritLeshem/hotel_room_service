@@ -13,12 +13,17 @@ module.exports={
     edit_order,
     edit_main_dish,
     delete_one_info,
-    delete_all_info
+    delete_all_info,
+    from_chef
     };
 
 function start_menu(req,res){
     console.log("start menu");
     res.render("orders/main_dish");
+}
+function from_chef(req,res){
+    console.log("start menu");
+    res.render("from_chef");
 }
 
 function create_order(req,res){
