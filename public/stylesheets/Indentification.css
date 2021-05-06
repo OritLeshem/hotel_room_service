@@ -2,14 +2,8 @@
     text-align: center;
     margin-top: 15vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
-    
 }
-#room_num{
-   
-    align-items: center;
-    display: inline-block;
-}
+
 #text_room{
     font-size: 25px;
     color: cornsilk;
@@ -19,14 +13,16 @@
     padding: 6vh;
     background-color: cornflowerblue;
     border-radius: 20px;
+    font-size: 2vh;
 }
+
 #change_order{
     height: 10vh;
     align-self: center;
     margin-top: 5vh;
     margin-bottom: 3vh;
     width: 70vw;
-    font-size: 3vh;
+    font-size: 2vh;
     box-shadow: 5px 10px 8px #888888;
-
+    border-radius: 8px;
 }

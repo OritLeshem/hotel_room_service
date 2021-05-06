@@ -35,7 +35,6 @@
         <% orders.forEach(function(d) { %>
 
           <tr>
-            
             <% if ( d.room_data[0]!== undefined ) { %>
             
             <td><%= d.room_data[0].room_num %></td>
@@ -48,7 +47,6 @@
             <td><form action="/orders/all_info/<%= d.id %>?_method=DELETE"
               class="delete-form" method="POST">
             <button type="submit">X</button>
-            </form>
             </td>
           
           </tr>
