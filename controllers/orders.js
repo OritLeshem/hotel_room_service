@@ -18,7 +18,6 @@ module.exports={
     };
 
 function start_menu(req,res){
-    console.log("start menu");
     res.render("orders/main_dish");
 }
 
@@ -30,7 +29,6 @@ function from_chef(req,res){
 function create_order(req,res){
     const order = new Order(req.body);
     order.save(function(err){
-        console.log("create_order parms---->",req.params)
         if(err) return res.send(err);
         res.redirect(`/orders/${order._id}`)
     })
@@ -49,33 +47,25 @@ function edit_main_dish(req, res){
 }
 
 function side_dish(req,res){
-   
     Order.findById((req.params.id),function(err, order) {
-        console.log("side_dish parms---->",req.params)
-        res.render('orders/side_dish',{order});
+       res.render('orders/side_dish',{order});
     })
 }
 
 function add_side_dish(req, res){
-    console.log("add_side_dish parms before---->",req.params)
     Order.findByIdAndUpdate(req.params.id,{side_dish:req.body.side_dish},function(err,order){
-        console.log("add_side_dish parms after---->",req.params)
         res.redirect(`/orders/${order._id}/dessert_dish`)
-        console.log("add_side_dish end order._id---->",order._id)
-  })
+    })
 }
 
 function dessert_dish(req,res){
-    console.log("dessert_dish parms---->",req.params)
     Order.findById((req.params.id),function(err, order) {
         res.render('orders/dessert_dish',{order});
     })
 }
 
 function add_dessert_dish(req, res){
-    console.log("dessert_dish parms---->",req.params)
     Order.findByIdAndUpdate(req.params.id,{dessert_dish:req.body.dessert_dish,allergies:req.body.allergies },function(err,order){
-        console.log("add_dessert_dish parms---->",req.params)
         res.redirect(`/orders/${order._id}/confirm`)        
     });
 }
@@ -104,7 +94,6 @@ function confirm(req, res) {
 }
 
 function delete_one_info(req,res){
-    console.log("delete function wae reached",req.params.id)
     Order.deleteOne({_id:req.params.id},function(err, order){
         res.redirect('/orders/all_info')
     });
